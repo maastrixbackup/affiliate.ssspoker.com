@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SSSPOKER</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="korean">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-push-3">
+                    <div class="blue_bg">
+                        <div class="blue_content">
+                            <h2>현재 시간:<span id="datespan">2018-07-09</span></h2>
+                        </div>
+                    </div>
+                    <ul class="timer">
+                        <li id="minutespan"><i class="fa fa-clock-o" aria-hidden="true"></i>19:00</li>
+                    </ul>
+                    <div class="display_clock">
+                        <ul>
+                            <li><p><img src="images/bitcoin_logo.png" v-align="top" style="vertical-align: top"> 비트 코인</p></li>
+                        </ul>
+                        <div class="black_box">
+                            <span id="sellpriceval">₩1.234</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function calcTime(offset) {
+        // create Date object for current location
+        var d = new Date();
+
+        // convert to msec
+        // subtract local time zone offset
+        // get UTC time in msec
+        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+        // create new Date object for different city
+        // using supplied offset
+        var nd = new Date(utc + (3600000 * offset));
+
+        // return time as a string
+        return nd.toLocaleString();
+    }
+    function pad(n) {
+        return (n < 10 ? '0' : '') + n;
+    }
+    function getdatetime() {
+        var currenttime = calcTime('+9');
+        var newdate = new Date(currenttime);
+        var dateString = (newdate).toISOString().split("T")[0];
+        var datehr = newdate.getHours();
+        var datemin = newdate.getMinutes();
+        $("#datespan").html(dateString);
+        $("#minutespan").html('<i class="fa fa-clock-o" aria-hidden="true"></i>' + datehr + ':' + pad(datemin));
+    }
+
+    $(document).ready(function () {
+        getdatetime();
+        setInterval(function () { getdatetime(); }, 1000);
+        $.ajax(
+                {
+                    type: 'GET',
+                    url: 'https://api.bithumb.com/public/ticker/BTC',
+                    data: '',
+                    success: function (data) {
+                        var intsellprice = parseInt(data.data.sell_price);
+                        var sellprice = "₩ " + intsellprice.toLocaleString('en');
+                        $("#sellpriceval").html(sellprice);
+                    }
+                });
+    });
+</script>
+
+</body>
+</html>

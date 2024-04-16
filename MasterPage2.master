@@ -1,0 +1,42 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage2.master.vb" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="well">
+        <div class="row-padding">
+                <ul class="nav nav-tabs">
+                    <li><a href="Admin_Summary_Listing.aspx" data-toggle="tab" id="aHome" runat="server">Home</a></li>
+                    <li><a href="Admin_Listing.aspx" data-toggle="tab" id="aUserList" runat="server">User List</a></li>
+                    <li><a href="Admin_Details.aspx" data-toggle="tab" id="aAdd" runat="server">Add User</a><a href="Admin_Details.aspx" data-toggle="tab" id="aEdit" runat="server" style="display:none">Edit User</a></li>
+                    <li><a href="Admin_Details_Upload_CSV.aspx" data-toggle="tab" id="aUploadCSV" runat="server">Upload CSV</a></li>
+                    <li><a href="Change_Password.aspx" data-toggle="tab">Change Password</a></li>
+                    <li><a href="Admin_Banner_Listing.aspx" data-toggle="tab" id="aBanner" runat="server">Banner List</a></li>
+                    <li><a href="Admin_Banner_Details.aspx" data-toggle="tab" id="aBannerDetails" runat="server">Add Banner</a></li>
+                    <li><a href="Player_Listing.aspx" data-toggle="tab">Player List</a></li>
+                    <li class="col-md-2 col-md-offset-2"><asp:Label ID="lblLoginID" runat="server" CssClass="navbar-brand"></asp:Label></li>
+                    <li><asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click" CssClass="navbar-brand" CausesValidation="false">Logout</asp:LinkButton></li>
+                </ul>
+            </div>
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

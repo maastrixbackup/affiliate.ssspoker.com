@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+@font-face {
+    font-family: 'PoppinsMedium';
+    src: url('../fonts/PoppinsMedium.eot');
+    src: url('../fonts/PoppinsMedium.eot') format('embedded-opentype'),
+         url('../fonts/PoppinsMedium.woff2') format('woff2'),
+         url('../fonts/PoppinsMedium.woff') format('woff'),
+         url('../fonts/PoppinsMedium.ttf') format('truetype'),
+         url('../fonts/PoppinsMedium.svg#PoppinsMedium') format('svg');
+}
+@font-face {
+    font-family: 'PoppinsSemiBold';
+    src: url('../fonts/PoppinsSemiBold.eot');
+    src: url('../fonts/PoppinsSemiBold.eot') format('embedded-opentype'),
+         url('../fonts/PoppinsSemiBold.woff2') format('woff2'),
+         url('../fonts/PoppinsSemiBold.woff') format('woff'),
+         url('../fonts/PoppinsSemiBold.ttf') format('truetype'),
+         url('../fonts/PoppinsSemiBold.svg#PoppinsSemiBold') format('svg');
+}
+
+@font-face {
+    font-family: 'PoppinsRegular';
+    src: url('../fonts/PoppinsRegular.eot');
+    src: url('../fonts/PoppinsRegular.eot') format('embedded-opentype'),
+         url('../fonts/PoppinsRegular.woff2') format('woff2'),
+         url('../fonts/PoppinsRegular.woff') format('woff'),
+         url('../fonts/PoppinsRegular.ttf') format('truetype'),
+         url('../fonts/PoppinsRegular.svg#PoppinsRegular') format('svg');
+}
+
+
+/*font-family: 'Raleway', sans-serif;*/
+body {
+	color:#454545 !important;
+	position:relative;
+	line-height:21px;
+	overflow-x:hidden;
+	margin:0px;
+	padding:0px;
+	background:#fff !important;
+	font-size:14px;
+}
+img{max-width:100%;height:auto;}
+
+
+:none;}
+
+input:focus, .radio label::before{outline:none!important; }
+
+.m10{ margin:10px 0px 0px 0px;}
+
+/***************** Topbar *****************/
+.korean {
+	padding:40px 0;
+}
+.blue_bg {
+    padding: 20px 0 18px;
+    background: #00b8c9;
+    text-align: center;
+    transform: skew(23deg);
+    width: 90%;
+    margin: 0 auto;
+}
+.blue_content {
+	    transform: skew(0deg, -179deg);
+} 
+.blue_content h2{
+	font-size:42px;
+	font-family: 'Oswald', sans-serif;
+	color:#fff;
+	font-weight:500;
+	margin:0px;
+	transform: skew(-22deg);
+}
+.korean .timer {
+	margin: 0px;
+    padding: 0px;
+    padding: 20px 0;
+    text-align: center;
+}
+.korean .timer li  {
+	display:inline-block;
+	color:#4b4b4b;
+	font-size:29px;
+	font-family: 'PoppinsMedium';
+}
+.korean .timer li i {
+	margin-right:4px;
+}
+.display_clock {
+       width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0px;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px#888;
+    box-shadow: 0 0 23px 2px #888;
+    max-width: 400px;
+}
+.display_clock ul {
+	margin:0px;
+	padding:0px;
+}
+.display_clock ul li {
+	display: inline-block;
+    margin-right: 0;
+}
+.black_box span {
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size:32px;
+
+}
+.display_clock ul li p {
+	 font-size: 32px;
+	 margin:0px;
+}
+.black_box ul {
+	margin:0px;
+	padding:0px;
+}
+.black_box ul li {
+	display:inline-block;
+	color:#fff;
+	font-size:18px;
+}
+.black_box {
+    padding: 10px;
+}
+.black_box p {
+    color: #fff;
+    font-size: 18px;
+    margin: 0px;
+}

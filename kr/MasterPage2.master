@@ -1,0 +1,300 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage2.master.vb" Inherits="MasterPage2" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="hello" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SSSPoker -
+        <asp:ContentPlaceHolder ID="title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <!-- MetisMenu CSS -->
+    <link href="Styles/metisMenu.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="Styles/sb-admin-2.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link href="Styles/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Crown/main.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Crown/reset.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Crown/ui_custom.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.datetimepicker.full.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/webticker.css" />
+    <script src="../js/jquery.webticker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#webticker").webTicker();
+        });
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <audio id="audio" src="../resources/chaching.mp3"></audio>
+    <div id="leftSide">
+        <div class="logo"><a href="Admin_Summary_Listing.aspx">
+            <img src="../images/login/logo-sss-poker.png" style="width: 100%;" alt="" /></a></div>
+        <div class="sidebarSep mt0"></div>
+        <!-- Next update progress widget -->
+        <ul class="nav" id="menu">
+            <li class="dash">
+                <a href="Admin_Summary_Listing.aspx" data-toggle="tab" id="aHome" runat="server" style="padding: 0px"><span>커미션 확인</span></a>
+                <%--<a href="~/Dashboard.aspx" id="dashboardli" runat="server" class="active" style="padding:0px"><span>Dashboard</span> </a>--%>
+            </li>
+
+             <li class="ticket">
+                <a href="Ticket_Listing.aspx" id="aTicket" runat="server" style="padding: 0px"><span>티켓 ( <label id="lblNewTicket" ></label> )</span></a>
+            </li>
+            <li class="ticket">
+                <a href="Ticket_Details.aspx" id="aTicketDetails" runat="server" style="padding: 0px"><span>티켓 신청</span></a>
+            </li>
+            <li class="ticket">
+                <a href="Ticket_History.aspx" id="aTicketHistory" runat="server" style="padding: 0px"><span>티켓 내역</span></a>
+            </li>
+
+            <li class="adminuser">
+                <a href="Admin_Listing.aspx" id="aUserList" runat="server" style="padding: 0px"><span>제휴 리스트</span></a>
+            </li>
+            <!--<li class="adminuserdet">
+                           <a href="Admin_Details.aspx" id="aAdd" runat="server" style="padding:0px"><span>제휴 추가</span></a>
+                        </li>-->
+            <!--<li class="upload">
+                           <a href="Admin_Details_Upload_CSV.aspx" id="aUploadCSV" runat="server" style="padding:0px"><span>Upload CSV</span></a>
+                        </li>-->
+            <li class="banners">
+                <a href="Admin_Banner_Listing.aspx" id="aBanner" style="padding: 0px" runat="server"><span>배너 리스트</span></a>
+            </li>
+            <li class="bannersdet">
+                <a href="Admin_Banner_Details.aspx" id="aBannerDetails" style="padding: 0px" runat="server"><span>배너 추가</span></a>
+            </li>
+            <li class="notification">
+                <a href="Notification.aspx" id="aNotification" style="padding: 0px" runat="server"><span>공지</span></a>
+            </li>
+            <li class="notificationdet">
+                <a href="Notification_Details.aspx" style="padding: 0px" id="aNotificationDetails" runat="server"><span>공지 추가</span></a>
+            </li>
+            <li class="player">
+                <a href="Player_Listing.aspx" style="padding: 0px" runat="server"><span>회원 리스트</span></a>
+            </li>
+            <li class="playerdet">
+                <a href="Player_Details.aspx" id="aPlayerDetails" style="padding: 0px" runat="server"><span>회원 추가하기</span></a>
+            </li>
+            <li class="profile">
+                <a href="profile.aspx" style="padding: 0px" id="aProfile" runat="server"><span>프로필</span></a>
+            </li>
+            <li class="locked">
+                <a href="Change_Password.aspx" style="padding: 0px"><span>비밀번호 변경</span></a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+    <div id="rightSide">
+        <div class="topNav">
+            <div class="wrapper">
+                <div class="leftnotification">
+                    <ul id="webticker">
+                        <asp:Literal ID="ltrNotification" runat="server"></asp:Literal>
+                    </ul>
+
+                </div>
+                <div class="userNav">
+                    <%--<form runat="server">--%>
+                    <ul>
+                        <li><a href="javascript:void(0)">
+                            <img src="../../kr/Images/Theme_Images/icons/topnav/profile.png" alt="" /><span id="lblLoginID" runat="server"></span></a></li>
+                        <%-- <li><a href="<%= ResolveClientUrl("~/UserProfile.aspx") %>" title=""><img src="../../Sources/Images/Theme_Images/icons/topnav/profile.png" alt="" /><span>Profile</span></a></li>--%>
+                        <%--<li><a href="#" title=""><img src="../../Sources/Images/Theme_Images/icons/topnav/tasks.png" alt="" /><span>Tasks</span></a></li>
+                                    <li class="dd"><a title=""><img src="../../Sources/Images/Theme_Images/icons/topnav/messages.png" alt="" /><span>Messages</span><span class="numberTop">8</span></a></li>
+                                    <li><a href="<%= ResolveClientUrl("~/User-Settings.aspx") %>" title=""><img src="../..//Sources/Images/Theme_Images/icons/topnav/settings.png" alt="" /><span>Settings</span></a></li>--%>
+                        <li><a runat="server" id="lnkLogout" onserverclick="lnkLogout_Click" title="">
+                            <img src="/kr/Images/Theme_Images/icons/topnav/logout.png" alt="" /><span>Logout</span></a></li>
+                    </ul>
+                    <%--</form>--%>
+                </div>
+            </div>
+        </div>
+        <div class="resp">
+            <div class="respHead">
+                <a href="Admin_Summary_Listing.aspx" title="">
+                    <img src="../images/login/logo-sss-poker.png" alt="" /></a>
+            </div>
+            <div class="cLine"></div>
+            <div class="smalldd">
+                <span class="goTo">
+                    <img src="Images/Theme_Images/icons/light/home.png" alt="" />커미션</span>
+                <ul class="smallDropdown">
+                    <li>
+                        <a href="Admin_Summary_Listing.aspx">
+                            <img src="Images/Theme_Images/icons/light/home.png" alt="" />커미션 확인</a>
+                    </li>
+                    <!--<li>
+                        <a href="Admin_Listing.aspx">
+                            <img src="Images/Theme_Images/icons/light/adminUser.png" alt="" />제휴 리스트</a>
+                    </li>-->
+                    <!--<li>
+                           <a href="Admin_Details.aspx"><img src="Images/Theme_Images/icons/light/adminUser2.png" alt="" />제휴 추가</a>
+                        </li>-->
+                    <!--<li>
+                           <a href="Admin_Details_Upload_CSV.aspx"><img src="Images/Theme_Images/icons/light/cloud.png" alt="" />Upload CSV</a>
+                        </li>-->
+                    <li>
+                        <a href="Admin_Banner_Listing.aspx">
+                            <img src="Images/Theme_Images/icons/light/imageList.png" alt="" />배너 리스트</a>
+                    </li>
+                    <!--<li>
+                        <a href="Admin_Banner_Details.aspx">
+                            <img src="Images/Theme_Images/icons/light/images2.png" alt="" />배너 추가</a>
+                    </li>-->
+                    <!--<li>
+                        <a href="Notification.aspx">
+                            <img src="Images/Theme_Images/icons/light/bell2.png" alt="" />공지</a>
+                    </li>-->
+                    <!--<li>
+                        <a href="Notification_Details.aspx">
+                            <img src="Images/Theme_Images/icons/light/bell.png" alt="" />공지 추가</a>
+                    </li>-->
+                    <li>
+                        <a href="Player_Listing.aspx">
+                            <img src="Images/Theme_Images/icons/light/users2.png" alt="" />회원 리스트</a>
+                    </li>
+                    <!--<li>
+                        <a href="Player_Details.aspx">
+                            <img src="Images/Theme_Images/icons/light/users2.png" alt="" />회원 추가하기</a>
+                    </li>-->
+                    <li>
+                        <a href="profile.aspx">
+                            <img src="Images/Theme_Images/icons/light/users2.png" alt="" />프로필</a>
+                    </li>
+                    <li>
+                        <a href="Change_Password.aspx">
+                            <img src="Images/Theme_Images/icons/light/locked2.png" alt="" />비밀번호 변경</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cLine"></div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script src="Scripts/jquery.validation.net.webforms.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/spinner/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/charts/excanvas.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/charts/jquery.sparkline.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/uniform.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.cleditor.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.validationEngine-en.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.autosize.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.dualListBox.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/jquery.inputlimiter.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/forms/chosen.jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/wizard/jquery.form.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/wizard/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/wizard/jquery.form.wizard.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/uploader/plupload.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/uploader/plupload.html5.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/uploader/plupload.html4.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/uploader/jquery.plupload.queue.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/tables/datatable.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/tables/tablesort.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/tables/resizable.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.tipsy.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.collapsible.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.progress.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.timeentry.min.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.colorpicker.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.breadcrumbs.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/ui/jquery.sourcerer.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/jquery.fullcalendar.js"></script>
+    <script type="text/javascript" src="Scripts/js/plugins/jquery.elfinder.js"></script>
+    <script type="text/javascript" src="Scripts/js/custom.js"></script>
+    <%--<script src="<%= ResolveClientUrl("~/Sources/Scripts/jquery.min.js") %>"></script>--%>
+    <%-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>--%>
+    <!-- Bootstrap Core JavaScript -->
+    <%--<script src="<%= ResolveClientUrl("~/Sources/Scripts/bootstrap.min.js") %>"></script>--%>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="Scripts/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <%--<script src="<%= ResolveClientUrl("~/Sources/Scripts/sb-admin-2.js") %>" ></script>--%>
+    <%--<script src="<%= ResolveClientUrl("~/Sources/Scripts/jquery-ui/jquery-ui.min.js") %>" ></script>--%>
+    <script src="Scripts/site.js"></script>
+    <script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.5.6/full/ckeditor.js"></script>
+    <%--<script src="<%= ResolveClientUrl("~/js/custom.js") %>" ></script>--%>
+
+    <script type="text/javascript">
+        // new ticket
+        var myVar = setInterval(function () { fiveSecondsTimer() }, 5000);
+        function fiveSecondsTimer() {
+            $.ajax({
+                type: "POST",
+                url: "/getapifunc.aspx/isNewTicket",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccessTicket,
+                failure: OnFailedTicket
+            });
+        }
+
+        function OnFailedTicket(response) {
+            alert("An error has occured");
+        }
+
+        function playNotifyAudio() {
+            var promise = document.querySelector('audio').play();
+            if (promise !== undefined) {
+                promise.then(_ => {
+                    //Autoplay started!
+                    audio.play();
+                }).catch(error => {
+                    //Autoplay was prevented.
+                    //Show a "Play" button so that user can start playback.
+                });
+            }
+        }
+
+        function OnSuccessTicket(response) {
+            var newTicket = document.getElementById('lblNewTicket');           
+
+            if (parseInt(response.d) > 0) {
+                playNotifyAudio();
+            }
+
+            newTicket.innerHTML = response.d;
+        }
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/60e57341d6e7610a49aa0812/1fa04keor';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

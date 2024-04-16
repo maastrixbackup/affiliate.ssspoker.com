@@ -1,0 +1,149 @@
+﻿body {
+}
+
+.row-padding{
+    padding-top:10px;
+}
+.header-align th{
+    text-align:center;
+}
+.row-align td{
+    width:150px;
+    text-align:center;
+}
+
+@font-face {
+    font-family: 'Actor';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Actor Regular'), local('Actor-Regular'), url(http://fonts.gstatic.com/s/actor/v6/OxqeYhb8dn7VMNU4gi8OwA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/actor/v6/gZ8EM_Gzaq4WRjCimioyzQ.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Oswald Regular'), local('Oswald-Regular'), url(http://fonts.gstatic.com/s/oswald/v10/pEobIV_lL25TKBpqVI_a2w.woff2) format('woff2'), url(http://fonts.gstatic.com/s/oswald/v10/-g5pDUSRgvxvOl5u-a_WHw.woff) format('woff');
+}
+
+/*Admistration*/
+#admin {
+    background: url('../images/home/background.jpg') repeat fixed center top;
+}
+.admistration .img-responsive {
+    padding: 0px 30px;
+}
+.admistration {
+    margin-top: 5%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.admistration input {
+    color: #000;
+    background-color: #9c9c9c;
+    border: none;
+    outline: none;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+    transition: all .3s ease-in-out;
+}
+.admistration input:focus{
+    text-indent: 10px;
+    box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+}
+.admistration #login-form{
+    background: -webkit-radial-gradient(#262626, #000); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#262626, #000);/* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#262626, #000); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#262626, #000); /* Standard syntax (must be last) */
+    height: 100%;
+    background-repeat: no-repeat;
+    padding: 50px 0px;
+    border-radius: 70px / 20px;
+}
+.admistration .admin {
+    margin: 10px 0px;
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+}
+.admistration .admin p{
+    padding: 0px;
+    padding-top: 10px;
+}
+.admistration #hover {
+    border: 0px;
+    background-color: #000;
+    cursor: pointer;
+}
+
+
+/* Customize container */
+@media (min-width: 320px) {
+    .admistration #login-form {
+    padding: 40px 0px;
+}
+#admin {
+background: url('../images/home/background.jpg') no-repeat fixed center top;
+background-size: cover;
+}
+}
+
+@media (max-width: 320px) {
+.admistration p,
+.admistration input,
+.admistration button {
+        margin-left: 10%;
+    }
+.admistration .img-responsive {
+    padding:0px;
+}
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 970px;
+    }
+
+    .container-footer {
+        width: 720px;
+    }
+
+    .container-940 {
+        width: 720px;
+    }
+    #mobile-banner {
+        display: none;
+    }
+.admistration .admin {
+    background-image: url('../images/login/bar-top-bottom.png');
+    background-size: 100% auto;
+    padding: 30px 0px;
+}
+.admistration #login-form {
+    padding: 30px 0px;
+}
+#admin {
+background: url('../images/home/background.jpg') no-repeat fixed center top;
+background-size: cover;
+}
+}
+
+@media (max-width: 768px) {
+.admistration .admin {
+    padding: 30px 0px;
+}
+}
+
+@media (max-width: 992px) {
+    .logo {
+        margin: 15px auto 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #admin {
+    background: url('../images/home/background.jpg') repeat fixed center top;
+}
+}
